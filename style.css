@@ -1,0 +1,20 @@
+/* {
+        box-sizing: border-box;
+      }*/
+table{
+   margin: auto
+}
+table,
+td,
+th{
+  padding: 10px;
+  border: solid black 2px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+button {
+  color: white;
+  background-color: #007bff;
+  border: none;
+}
