@@ -11,15 +11,6 @@
 </head>
 
 <body>
-  <button class="btn btn-success" onclick="showAddCompanyForm()">Add Company</button>
-  <form name="addCompanyForm" id="addCompanyForm" style="display: none;">
-    <input type="text" placeholder="Company Name" name="name"></input>
-    <input type="checkbox" name="isUsCompany" id="isUsCompany"></input>
-    <label for="isUsCompany">Is US Company</label>
-    <input type="text" name="ticker" placeholder="Ticker"></input>
-    <input type="number" placeholder="Company Price" name="price"></input>
-    <button type="button" onclick="submitForm()" id="submit_btn">Submit</button>
-  </form>
   <table>
     <thead>
       <tr>
@@ -33,6 +24,17 @@
     </thead>
     <tbody id="table-body"></tbody>
   </table>
+  <div>
+  <button class="btn btn-success" onclick="showAddCompanyForm()">Add Company</button>
+  <form name="addCompanyForm" id="addCompanyForm" style="display: none;">
+    <input type="text" placeholder="Company Name" name="name"></input><br>
+    <label for="isUsCompany">Is US Company</label>
+    <input type="checkbox" name="isUsCompany" id="isUsCompany" class="check_box"></input><br>
+    <input type="text" name="ticker" placeholder="Ticker"></input><br>
+    <input type="number" placeholder="Company Price" name="price"></input><br>
+    <button type="button" onclick="submitForm()" id="submit_btn">Submit</button>
+  </form>
+</div>
   <script src="script.js"></script>
 </body>
 

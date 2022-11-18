@@ -1,26 +1,56 @@
-/* {
-        box-sizing: border-box;
-      }*/
-table{
-   margin: auto
+table {
+  margin: auto
 }
+
 table,
 td,
-th{
+th {
   padding: 10px;
   border: solid black 2px;
   border-collapse: collapse;
   text-align: center;
 }
 
-button {
+.buy_btn,
+.sell_btn {
+  margin: 0;
   color: white;
   background-color: #007bff;
   border: none;
+  border-radius: 0px;
 }
 
-.remove_btn{
-  color: white;
-  background-color: red;
+.remove_btn {
+  margin: 0;
+  color: red;
+  background-color: transparent;
   border: none;
+
+}
+
+button {
+  margin-top: 30px;
+  height: 30px;
+  width: auto;
+  color: white;
+  background-color: #007bff;
+  border-radius: 30px;
+  border: none;
+}
+
+div {
+  margin-left: 50%;
+}
+
+input,
+label {
+  border-radius: 10px;
+  height: 30px;
+  margin-top: 20px;
+  margin-left: -35px;
+}
+
+.check_box{
+  margin: 0px;
+  margin-top: 10px;
 }

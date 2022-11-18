@@ -11,14 +11,14 @@ function generateTable() {
 		createAndAppendTd(trElement, company.ticker.toUpperCase());
 		createAndAppendTd(trElement, `$${company.price}`);
 		createAndAppendTd(trElement, company.amount);
-		createAndAppendTd(trElement, `$${company.value}`);
+		createAndAppendTd(trElement, `$${company.value.toFixed(2)}`);
 		
-		createAndAppendBtn(trElement, 'buy');
+		createAndAppendBtn(trElement, company.amount ?  'buy more' : 'buy', 'buy_btn');
 		btn.addEventListener('click', function () {
 			buyStock(i);
 		});
 
-		createAndAppendBtn(trElement, 'sell', );
+		createAndAppendBtn(trElement, 'sell', 'sell_btn');
 		btn.addEventListener('click', function () {
 			sellStock(i);
 		});
@@ -44,8 +44,8 @@ function createAndAppendBtn(trElement, innerText, className) {
 	btnTd = document.createElement('td');
 	btn = document.createElement('button');
 	btnTd.append(btn);
-	innerText = btn.innerText = innerText;
-	className = btn.classList.add(className);
+	btn.innerText = innerText;
+	btn.classList.add(className);
 	trElement.append(btnTd);
 }
 
@@ -67,7 +67,7 @@ function buyStock(index) {
 
 function sellStock(index) {
 	if( companies[index].amount <= 0){
-		alert('you dont have stock to sell');
+		alert(`you dont have any ${companies[index].name} stock to sell`);
 		throw 'invalid'
 	}
 	let amount = Number(
