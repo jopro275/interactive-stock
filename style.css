@@ -18,3 +18,9 @@ button {
   background-color: #007bff;
   border: none;
 }
+
+.remove_btn{
+  color: white;
+  background-color: red;
+  border: none;
+}

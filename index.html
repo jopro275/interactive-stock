@@ -1,52 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Stocks</title>
-	<script src="script.js"></script>
-	<link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <table>
-      <thead>
-        <tr>
-          <th>Ticker</th>
-          <th>Price</th>
-          <th>Amount</th>
-          <th>Value</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>PFE</td>
-          <td>44.14</td>
-          <td id="amountPfe">0</td>
-          <td id="valuePfe">$0</td>
-          <td>
-            <button onclick="buyStock(0)">Buy More</button>
-          </td>
-        </tr>
-		<tr>
-			<td>MRK</td>
-			<td>94.36</td>
-			<td id="amountMrk">0</td>
-			<td id="valueMrk">$0</td>
-			<td>
-			  <button onclick="buyStock(1)">Buy More</button>
-			</td>
-		  </tr>
-		  <tr>
-			<td>UNH</td>
-			<td>515.51</td>
-			<td id="amountUnh">0</td>
-			<td id="valueUnh">$0</td>
-			<td>
-			  <button onclick="buyStock(2)">Buy More</button>
-			</td>
-		  </tr>
-      </tbody>
-    </table>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stocks</title>
+  <link rel="stylesheet" href="style.css">
+
+  <script src="companeis.js"></script>
+</head>
+
+<body>
+  <button class="btn btn-success" onclick="showAddCompanyForm()">Add Company</button>
+  <form name="addCompanyForm" id="addCompanyForm" style="display: none;">
+    <input type="text" placeholder="Company Name" name="name"></input>
+    <input type="checkbox" name="isUsCompany" id="isUsCompany"></input>
+    <label for="isUsCompany">Is US Company</label>
+    <input type="text" name="ticker" placeholder="Ticker"></input>
+    <input type="number" placeholder="Company Price" name="price"></input>
+    <button type="button" onclick="submitForm()" id="submit_btn">Submit</button>
+  </form>
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>Is US Company</th>
+        <th>Ticker</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>value</th>
+      </tr>
+    </thead>
+    <tbody id="table-body"></tbody>
+  </table>
+  <script src="script.js"></script>
+</body>
+
 </html>
