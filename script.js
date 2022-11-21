@@ -12,9 +12,12 @@ function generateTable() {
 		createAndAppendTd(trElement, `$${company.price}`);
 		createAndAppendTd(trElement, company.amount);
 		createAndAppendTd(trElement, `$${company.value.toFixed(2)}`);
-		
-		createAndAppendBtn(trElement, company.amount ?  'buy more' : 'buy', 'buy_btn');
-		btn.addEventListener('click', function () {
+
+		createAndAppendBtn(trElement, company.amount ? 'buy more' : 'buy', 'buy_btn', buyStock(i));
+		createAndAppendBtn(trElement, 'sell', 'sell_btn', sellStock(i));
+		createAndAppendBtn(trElement, 'remove', 'remove_btn', removeStock(i));
+
+		/*btn.addEventListener('click', function () {
 			buyStock(i);
 		});
 
@@ -27,9 +30,10 @@ function generateTable() {
 		btn.addEventListener('click', function () {
 			removeStock(i);
 		});
-
+		*/
 		tableBodyElement.append(trElement);
 	}
+
 
 }
 
@@ -40,17 +44,17 @@ function createAndAppendTd(trElement, innerText) {
 }
 
 
-function createAndAppendBtn(trElement, innerText, className) {
+function createAndAppendBtn(trElement, innerText, className, callback) {
 	btnTd = document.createElement('td');
 	btn = document.createElement('button');
 	btnTd.append(btn);
 	btn.innerText = innerText;
 	btn.classList.add(className);
 	trElement.append(btnTd);
+	btn.addEventListener('click', callback());
 }
 
 function buyStock(index) {
-	// Handle the button click
 	let amount = Number(
 		prompt(
 			`How many ${companies[index].name} stocks would you like to buy?`
@@ -66,7 +70,7 @@ function buyStock(index) {
 }
 
 function sellStock(index) {
-	if( companies[index].amount <= 0){
+	if (companies[index].amount <= 0) {
 		alert(`you dont have any ${companies[index].name} stock to sell`);
 		throw 'invalid'
 	}
@@ -78,7 +82,7 @@ function sellStock(index) {
 	if (isNaN(amount)) {
 		alert("Invalid amount. Please enter a valid amount.");
 		throw 'invalid'
-	}else{
+	} else {
 		companies[index].amount -= amount;
 		companies[index].value = companies[index].amount * companies[index].price;
 		generateTable();
@@ -114,3 +118,4 @@ function submitForm() {
 let btnTd;
 let btn;
 generateTable();
+
