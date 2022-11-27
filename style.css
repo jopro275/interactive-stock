@@ -1,5 +1,5 @@
 table {
-  margin: auto
+  margin: auto;
 }
 
 table,
@@ -28,6 +28,13 @@ th {
 
 }
 
+#sign_in{
+  margin: 0;
+  color: #007bff;
+  background-color: transparent;
+  border: none;
+}
+
 button {
   margin-top: 30px;
   height: 30px;
@@ -38,7 +45,7 @@ button {
   border: none;
 }
 
-div {
+#div_form {
   margin-left: 50%;
 }
 
@@ -50,7 +57,7 @@ label {
   margin-left: -35px;
 }
 
-.check_box{
+.check_box {
   margin: 0px;
   margin-top: 10px;
 }

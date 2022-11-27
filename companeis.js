@@ -11,7 +11,7 @@ let companies = [
 {
 	name: 'merk',
 	isUsComapny: true,
-	ticker: 'PFE',
+	ticker: 'MRK',
 	price: 94.36,
 	amount: 0,
 	value: 0
@@ -19,7 +19,7 @@ let companies = [
 {
 	name: 'united healthcare',
 	isUsComapny: true,
-	ticker: 'PFE',
+	ticker: 'UNH',
 	price: 515.15,
 	amount: 0,
 	value: 0
