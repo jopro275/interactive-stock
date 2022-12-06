@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stocks</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="../data/data.js"></script>
+</head>
+
+<body id="body">
+  <nav class="top_nav">
+		<a href="./index.html">home</a>
+		<a href="../sign up/sign_up.html">sign up</a>
+    <a href="../sign in/sign-in.html">sign in</a>
+	</nav>
+
+  <h1>health care</h1>
+  <h2 id="user_name"></h2>
+  <h3 id="market_status"></h3>
+  <p id="p"></p>
+  <table>
+    <thead>
+      <tr>
+        <th>name</th>
+        <th>Is US Company</th>
+        <th>Ticker</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>value</th>
+      </tr>
+    </thead>
+    <tbody id="table_body"></tbody>
+  </table>
+  <div id="div_form">
+    <button id="add_company_btn" class="btn btn_success" onclick="showAddCompanyForm()">Add Company</button>
+    <form name="add_company_form" id="add_company_form" style="display: none;">
+      <input id="add_company_input" type="text" placeholder="Company Name" name="name"></input><br>
+      <label id="add_company_input" for="is_us_company">Is US Company</label>
+      <input id="add_company_input" type="checkbox" name="is_us_company" id="is_us_company" class="check_box"></input><br>
+      <input id="add_company_input" type="text" name="ticker" placeholder="Ticker"></input><br>
+      <input id="add_company_input" type="number" placeholder="Company Price" name="price"></input><br>
+      <button type="button" onclick="submitForm()" id="submit_btn">Submit</button>
+    </form>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

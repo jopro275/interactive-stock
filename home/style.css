@@ -1,3 +1,7 @@
+body{
+  margin: 0;
+}
+
 table {
   margin: auto;
 }
@@ -5,6 +9,7 @@ table {
 table,
 td,
 th {
+  color: black;
   padding: 10px;
   border: solid black 2px;
   border-collapse: collapse;
@@ -15,42 +20,39 @@ th {
 .sell_btn {
   margin: 0;
   color: white;
-  background-color: #007bff;
+  background-color: black;
   border: none;
   border-radius: 0px;
 }
 
 .remove_btn {
   margin: 0;
-  color: red;
+  color: white;
   background-color: transparent;
   border: none;
+  /*text-shadow: 1px 1px 2px #50331b;*/
 
 }
 
-#sign_in{
-  margin: 0;
-  color: #007bff;
-  background-color: transparent;
-  border: none;
-}
 
-button {
+
+#submit_btn,
+#add_company_btn {
   margin-top: 30px;
-  height: 30px;
+ /*height: 30px;*/
+  padding: 20px 50px;
   width: auto;
   color: white;
-  background-color: #007bff;
+  background-color: black;
   border-radius: 30px;
   border: none;
 }
 
 #div_form {
-  margin-left: 50%;
+  margin-left: 40%;
 }
 
-input,
-label {
+#add_company_input {
   border-radius: 10px;
   height: 30px;
   margin-top: 20px;
@@ -61,3 +63,23 @@ label {
   margin: 0px;
   margin-top: 10px;
 }
+
+.top_nav{
+ background-color: black;
+ width: 100%;
+ padding: 20px;
+}
+
+a{
+	color: white;
+	text-decoration: none;
+	margin-right: 20px;
+  }
+  
+  a:hover{
+	text-decoration: underline;
+  }
+  
+  a:active{
+	color: white;
+  }

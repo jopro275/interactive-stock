@@ -48,3 +48,11 @@ let companies = [
 	amount: 0,
 	value: 0
 }];
+
+
+
+let userData = 
+{
+	name: '',
+	password: ''
+}

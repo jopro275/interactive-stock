@@ -1,14 +1,15 @@
 let btnTd;
 let btn;
 let formElement;
+let closedBackgroundColor ='#8f741e';
 
 window.onload = function () {
-	generateTable();
 	displayMarketStatus();
 }
 
 function generateTable() {
-	let tableBodyElement = document.getElementById('table-body');
+	
+	let tableBodyElement = document.getElementById('table_body');
 	tableBodyElement.innerHTML = null;
 
 	for (let i = 0; i < companies.length; i++) {
@@ -91,15 +92,15 @@ function removeStock(index) {
 }
 
 function showAddCompanyForm() {
-	document.getElementById('addCompanyForm').style.display = 'block';
+	document.getElementById('add_company_form').style.display = 'block';
 }
 
 function submitForm() {
-	formElement = document.getElementById('addCompanyForm');
+	formElement = document.getElementById('add_company_form');
 	let fd = new FormData(formElement);
 	let company = {};
 	company.name = fd.get('name');
-	company.isUsComapny = fd.get('isUsCompany') == 'on';
+	company.isUsComapny = fd.get('is_us_company') == 'on';
 	company.ticker = fd.get(`ticker`);
 	company.price = fd.get('price');
 	company.amount = 0;
@@ -112,40 +113,27 @@ function submitForm() {
 function returMarketStatus() {
 	let body = document.getElementById('body');
 	let p = document.getElementById('p');
-	let currentTime = new Date();
+	var currentTime = new Date();
 	let marketOpen = new Date();
-	marketOpen.setHours(9);
-	marketOpen.setMinutes(30);
-	marketOpen.setSeconds(0);
+	marketOpen.setHours(9, 30, 0);
 	let marketClose = new Date();
-	marketClose.setHours(16);
-	marketClose.setMinutes(0);
-	marketClose.setSeconds(0);
-	let day = currentTime.getDay();
+	marketClose.setHours(16, 0, 0);
+	
+	checkWeekend();
 
-	if (day == 6) {
-		p.innerText = 'market closed on saturday';
-		body.style.background = "rgb(46, 5, 252)";
-		body.style.color = 'white'
-		return false;
-	} else if (day == 0) {
-		p.innerText = 'market closed on sunday';
-		body.style.background = "rgb(46, 5, 252)";
-		body.style.color = 'white'
-		return false;
-	} else if (currentTime < marketOpen) {
+	 if (currentTime < marketOpen) {
 		convertMs(`market opens in`, marketOpen - currentTime);
-		body.style.background = "rgb(46, 5, 252)";
+		body.style.background = closedBackgroundColor;
 		body.style.color = 'white'
 		return false;
 	} else if (currentTime >= marketClose) {
 		convertMs(`market already closed for`, currentTime - marketClose);
-		body.style.background = "rgb(46, 5, 252)";
+		body.style.background = closedBackgroundColor;
 		body.style.color = 'white';
 		return false;
-	} else if (currentTime >= marketOpen && currentTime <= marketClose && day > 0 && day <= 5) {
+	} else if (currentTime >= marketOpen && currentTime <= marketClose && checkWeekend() ) {
 		convertMs(`market already open for`, currentTime - marketOpen);
-		body.style.background = "rgb(169, 168, 240)";
+		body.style.background = "#b19025";
 		body.style.color = 'black';
 		return true;
 	}
@@ -154,6 +142,25 @@ function returMarketStatus() {
 function displayMarketStatus() {
 	let marketStatus = returMarketStatus() ? `market is currently open` : `market is currently closed`;
 	document.getElementById("market_status").innerHTML = marketStatus;
+}
+
+function checkWeekend(){
+	let currentDay = new Date()
+	let day = currentDay.getDay();
+
+	if (day == 6) {
+		p.innerText = 'market closed on saturday';
+		body.style.background = closedBackgroundColor;
+		body.style.color = 'white'
+		return false;
+	} else if (day == 0) {
+		p.innerText = 'market closed on sunday';
+		body.style.background = closedBackgroundColor;
+		body.style.color = 'white'
+		return false;
+	}else{
+		return true 
+	} 
 }
 
 function convertMs(innerTxt, num) {
@@ -173,3 +180,4 @@ function convertMs(innerTxt, num) {
 }
 
 setInterval(displayMarketStatus, 1000);
+generateTable();
