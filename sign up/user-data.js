@@ -1,0 +1,6 @@
+
+let userData =
+{
+	name: '',
+	password: ''
+}

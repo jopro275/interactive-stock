@@ -1,9 +1,37 @@
-body{
+body {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+h1 {
+  white-space: nowrap;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 50px;
+  margin: 10px;
+  margin-left: 10px;
+}
+
+p {
   margin: 0;
 }
 
+#alert{
+  color: blue;
+}
+
+.main_contant{
+  display: flex;
+}
+
 table {
-  margin: auto;
+  border: solid;
+  margin-top: 20px;
+  width: 50%;
+  margin-left: 25%;
+  
+ /* margin: auto;*/
 }
 
 table,
@@ -30,18 +58,14 @@ th {
   color: white;
   background-color: transparent;
   border: none;
-  /*text-shadow: 1px 1px 2px #50331b;*/
-
 }
-
-
 
 #submit_btn,
 #add_company_btn {
   margin-top: 30px;
- /*height: 30px;*/
+  /*height: 30px;*/
   padding: 20px 50px;
-  width: auto;
+ /* width: auto;*/
   color: white;
   background-color: black;
   border-radius: 30px;
@@ -49,7 +73,7 @@ th {
 }
 
 #div_form {
-  margin-left: 40%;
+  margin-left: 20px;
 }
 
 #add_company_input {
@@ -65,21 +89,31 @@ th {
 }
 
 .top_nav{
- background-color: black;
- width: 100%;
- padding: 20px;
+  display: flex;
+  background-color: black;
+  width: 100%;
+  height:min-content;
+ /* padding: 20px;*/
+}
+.top_nav .links{
+  display: flex;
+  background-color: black;
+  width: 100%;
+  padding: 20px;
+  margin-left: 60%;
 }
 
-a{
-	color: white;
-	text-decoration: none;
-	margin-right: 20px;
-  }
-  
-  a:hover{
-	text-decoration: underline;
-  }
-  
-  a:active{
-	color: white;
-  }
+a {
+  color: white;
+  text-decoration: none;
+  margin-right: 40px;
+
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  color: white;
+}
