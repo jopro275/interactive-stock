@@ -34,14 +34,19 @@ let companies = [
 		amount: 0,
 		value: 0,
 		logo: '../img/moh-logo.png'
-	},
+	},{
+		name: 'avantor',
+		isUsComapny: true,
+		ticker: 'AVTR',
+		price: '0.00',
+		amount: 0,
+		value: 0,
+		logo: '../img/avtr-logo.png'
+	}
 
 ];
 
 const apiKey = `7A3z658_tQC6ahSk2OuVL8giMZitmCoD`;
-let startDate = Date.now();
-let diff = startDate - (1000 * 60 * 60 * 24);
-let now = Date.now();
 
 for (let i = 0; i < companies.length; i++) {
 	let stockTicker = companies[i].ticker;
@@ -50,9 +55,9 @@ for (let i = 0; i < companies.length; i++) {
 
 async function getData(tickerSimbol, index) {
 
-	let response = await fetch(`https://api.polygon.io/v2/aggs/
-		ticker/${tickerSimbol}/range/1/day/${diff}/${now}?
-		adjusted=true&limit=1&apiKey=${apiKey}`);
+	let response = await fetch(`https://api.polygon.io/v2/aggs/ticker/
+	${tickerSimbol}
+	/prev?adjusted=true&apiKey=${apiKey}`);
 
 	if (!response.ok) {
 		document.querySelector('#alert').innerHTML = 'please try again in 1 minute'
@@ -67,20 +72,3 @@ async function getData(tickerSimbol, index) {
 	companies[index].price = data.results[0].c;
 	generateTable();
 }
-
-
-
-
-/*
-{
-	 {
-		name: 'avantor',
-		isUsComapny: true,
-		ticker: 'AVTR',
-		price: '0.00',
-		amount: 0,
-		value: 0,
-		logo: '../img/avtr-logo.png'
-	}
-	},
-	*/

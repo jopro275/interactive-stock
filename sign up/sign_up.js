@@ -31,8 +31,10 @@ function Validate(password) {
 	for (let rule of RULES) {
 		if (rule.validator(password)) {
 			document.getElementById(rule.name).style.color = '#b19025';
+			document.querySelector(".list_of_rules").style.liststyle = "none";
 		} else {
 			document.getElementById(rule.name).style.color = 'balck';
+			document.querySelector(".list_of_rules").style.liststyle = 'circle';
 		}
 	}
 	

@@ -3,6 +3,8 @@ let btn;
 let formElement;
 let closedBackgroundColor = '#8f741e';
 
+let p = document.getElementById('market_time_open/closed');
+
 
 window.onload = function () {
 	displayMarketStatus();
@@ -41,7 +43,7 @@ function createAndAppendImg(trElement, imgSrc) {
 	let myImage = new Image(40);
 	myImage.src = imgSrc;
 	if (imgSrc == 0) {
-		myImage = '0';
+		myImage = 'no img';
 	}
 	trElement.append(myImage);
 }
@@ -61,6 +63,11 @@ function buyStock(index) {
 		alert('please try again in 1 minute');
 		throw 'error'
 	}
+if(!returMarketStatus()){
+	alert('market closed!');
+	throw 'error'
+
+}
 	let amount = Number(
 		prompt(
 			`How many ${companies[index].name} stocks would you like to buy?`
@@ -76,6 +83,15 @@ function buyStock(index) {
 }
 
 function sellStock(index) {
+		if (companies[index].price == '0.00') {
+			alert('please try again in 1 minute');
+			throw 'error'
+		}
+	if(!returMarketStatus()){
+		alert('market closed!');
+		throw 'error'
+	
+	}
 	if (companies[index].amount <= 0) {
 		alert(`you dont have any ${companies[index].name} stock to sell`);
 		throw 'invalid'
@@ -107,7 +123,12 @@ function removeStock(index) {
 
 
 function showAddCompanyForm() {
-	document.getElementById('add_company_form').style.display = 'block';
+		var form = document.getElementById('add_company_form');
+		if (form.style.display == 'none') {
+		  form.style.display = 'block';
+		} else {
+		  form.style.display = 'none';
+		}
 }
 
 function submitForm() {
@@ -130,7 +151,7 @@ function submitForm() {
 
 function returMarketStatus() {
 	let body = document.getElementById('body');
-	let p = document.getElementById('market_time_open/closed');
+   
 	var currentTime = new Date();
 	let marketOpen = new Date();
 	marketOpen.setHours(9, 30, 0);
@@ -177,12 +198,11 @@ function checkWeekend() {
 		body.style.color = 'white'
 		return false;
 	} else {
-		return true
+		return true;
 	}
 }
 
 function convertMs(innerTxt, num) {
-	p = document.getElementById('market_time_open/closed');
 	let s = Math.floor((num / 1000) % 60);
 	let mn = Math.floor(num / (1000 * 60) % 60);
 	let hr = Math.floor(num / (1000 * 60 * 60) % 60);
@@ -195,8 +215,7 @@ function convertMs(innerTxt, num) {
 	} else {
 		p.innerText = `${innerTxt} ${hr}:${mn}:${s} hours`
 	}
-
 }
 
 setInterval(displayMarketStatus, 1000);
-generateTable();
+//generateTable();
