@@ -1,3 +1,8 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
   text-align: center;
@@ -13,15 +18,11 @@ h1 {
   margin-left: 10px;
 }
 
-p {
-  margin: 0;
+#alert {
+  color: rgb(148, 0, 32);
 }
 
-#alert{
-  color: blue;
-}
-
-.main_contant{
+.main_contant {
   display: flex;
 }
 
@@ -30,8 +31,8 @@ table {
   margin-top: 20px;
   width: 50%;
   margin-left: 25%;
-  
- /* margin: auto;*/
+
+  /* margin: auto;*/
 }
 
 table,
@@ -45,19 +46,19 @@ th {
 }
 
 .buy_btn,
-.sell_btn {
+.sell_btn,
+.remove_btn {
   margin: 0;
   color: white;
   background-color: black;
   border: none;
   border-radius: 0px;
+  width: max-content;
+
 }
 
 .remove_btn {
-  margin: 0;
-  color: white;
   background-color: transparent;
-  border: none;
 }
 
 #submit_btn,
@@ -65,11 +66,15 @@ th {
   margin-top: 30px;
   /*height: 30px;*/
   padding: 20px 50px;
- /* width: auto;*/
+  /* width: auto;*/
   color: white;
   background-color: black;
   border-radius: 30px;
   border: none;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 #div_form {
@@ -88,32 +93,45 @@ th {
   margin-top: 10px;
 }
 
-.top_nav{
+.top_nav {
   display: flex;
   background-color: black;
-  width: 100%;
-  height:min-content;
- /* padding: 20px;*/
+  align-items: center;
 }
-.top_nav .links{
+
+.top_nav .links {
   display: flex;
   background-color: black;
-  width: 100%;
-  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
   margin-left: 60%;
 }
 
 a {
   color: white;
   text-decoration: none;
-  margin-right: 40px;
-
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
+.a_h1:hover {
+  text-decoration: none;
+}
+
 a:active {
   color: white;
+}
+
+.closedMarket{
+  background-color: #389159;
+  color: white;
+}
+
+.openMarket{
+  background-color: #6bca8e;
+  color: black;
 }

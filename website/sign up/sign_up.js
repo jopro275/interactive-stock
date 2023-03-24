@@ -40,8 +40,6 @@ function Validate(password) {
 	
 }
 
-
-
 function signUpSubmit() {
 	if (checkSubmit()) {
 		let formElement = document.querySelector(".sign_up_form");

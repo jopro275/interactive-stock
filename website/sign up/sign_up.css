@@ -2,22 +2,30 @@ body {
 	background-color: #b19025;
 }
 
-#sign_up_name,
-#sign_up_password,
-#sign_up_confirm_password {
-	margin-top: 20px;
-	align-items: center;
-	border: black double;
-	padding: 20px;
-	border-radius: 30px;
-	background-color: #b19025;
-}
-
-.form_border.sign_up_form {
-	position: relative;
+.form_border {
+	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+.sign_up_form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+#sign_up_name,
+#sign_up_password,
+#sign_up_confirm_password {
+	padding: 20px;
+	border-radius: 20px;
+	min-width: 240px;
+	min-height: 30px;
+	background-color: #b19025;
+	
 }
 
 #sign_up_submit {
@@ -31,9 +39,11 @@ body {
 
 }
 
-.list_of_rules{
-	list-style:none;
-	text-align:start;
+.list_of_rules {
+	list-style: none;
+	text-align: start;
+	margin: 0;
+	padding-inline-start: 0;
 }
 
 #sign_in_btn {
@@ -46,15 +56,4 @@ body {
 #sign_up_sign_up_div {
 	display: flex;
 	gap: 20px;
-}
-
-.form_border {
-
-	background-color: #8f741e;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	width: 30%;
-	border-radius: 5%;
 }

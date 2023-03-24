@@ -13,7 +13,9 @@
 
 <body>
 	<nav class="top_nav">
-		<h1>health care</h1>
+	    <a href="../home/index.html"  class="a_h1">
+			<h1>health care</h1>
+		  </a>
 		<div class="links">
 		  <a href="../home/index.html">home</a>
 		  <a href="./sign_up.html">sign up</a>
@@ -23,22 +25,26 @@
 
 	<div class="form_border">
 			<form class="sign_up_form">
-				<input id="sign_up_name" type="text" placeholder="full name" name="name" required><br>
-				<input id="sign_up_password" type="password" placeholder="create password" name="password" required><br>
+				
+				<input id="sign_up_name" type="text" placeholder="full name" name="name" required>
+				<input id="sign_up_password" type="password" placeholder="create password" name="password" required>
+				
 				<ul class="list_of_rules">
 					<li id="valid_min8">minimum 8 charecters</li>
 					<li id="valid_upper">at least 1 uper case</li>
 					<li id="valid_lower">at least 1 lower case</li>
 					<li id="valid_number">1 number</li>
 				</ul>
+
 				<input id="sign_up_confirm_password" type="password" placeholder="confirm password"
-					name="confirmed_password" required><br>
+					name="confirmed_password" required>
 			</form>
-			<p id="alert_message">
-			<p>
+
+			<p id="alert_message"><p>
+
 			<div id="sign_up_sign_up_div">
 				<button id="sign_up_submit" type="submit" onclick="signUpSubmit()">sign up</button>
-				<button id="sign_in_btn">sign in</button>
+				<button id="sign_in_btn" onclick="location.href ='../sign in/sign-in.html'">sign in</button>
 			</div>
 		</div>
 	</div>

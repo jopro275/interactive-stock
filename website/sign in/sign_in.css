@@ -1,0 +1,35 @@
+body {
+	background-color: #b19025;
+}
+
+.form_border {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.sign_up_form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+#sign_up_name,
+#sign_up_password {
+	padding: 20px;
+	border-radius: 20px;
+	min-width: 240px;
+	min-height: 30px;
+	background-color: #b19025;
+}
+#sign_in_submit {
+	padding: 10px 30px;
+	margin-top: 20px;
+	color: white;
+	background-color: black;
+	border-radius: 30px;
+
+}

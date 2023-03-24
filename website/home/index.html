@@ -6,12 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stocks</title>
   <link rel="stylesheet" href="./style.css">
-  <script src="../data/data.js"></script>
+  <script defer src="../data/data.js"></script>
+  <script defer src="./fetchData.js"></script>
+  <script defer src="./checkTiming.js"></script>
+  <script defer src="./script.js"></script>
 </head>
 
 <body id="body">
   <nav class="top_nav">
-    <h1>health care</h1>
+    <a href="index.html" class="a_h1">
+      <h1>health care</h1>
+    </a>
     <div class="links">
       <a href="./index.html">home</a>
       <a href="../sign up/sign_up.html">sign up</a>
@@ -20,9 +25,9 @@
   </nav>
 
 
-  
+
   <h3 id="market_status"></h3>
-  <p id="market_time_open/closed"></p>
+  <p id="market_time_msg"></p>
   <main class="main_contant">
     <table>
       <thead>
@@ -55,7 +60,6 @@
     </div>
   </main>
   <h2 id="alert"></h2>
-  <script src="./script.js"></script>
 </body>
 
 </html>
